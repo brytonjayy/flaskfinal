@@ -1,1 +1,19 @@
-<h1>Search by Title</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Title</title>
+</head>
+<body>
+    <h1>Search by Title</h1>
+        <form method="get" action="/titles">
+            
+            {{form.csrf_token}}
+
+            {{form.book_title.label}}&nbsp;{{form.book_title}}&nbsp;
+
+    <input class="searchButton" type="submit" name="bytitle" value="-> Search for Book <-">
+</form>
+</body>
+</html>

@@ -302,9 +302,12 @@ dependencies = [
     { name = "flask-argon2" },
     { name = "flask-bcrypt" },
     { name = "flask-session" },
+    { name = "flask-wtf" },
     { name = "mysql-connector-python" },
     { name = "paramiko" },
     { name = "sshtunnel" },
+    { name = "wtforms" },
+    { name = "wtforms-validators" },
 ]
 
 [package.metadata]
@@ -315,9 +318,12 @@ requires-dist = [
     { name = "flask-argon2", specifier = ">=0.3.0.0" },
     { name = "flask-bcrypt", specifier = ">=1.0.1" },
     { name = "flask-session", specifier = ">=0.8.0" },
+    { name = "flask-wtf", specifier = ">=1.2.2" },
     { name = "mysql-connector-python", specifier = ">=9.6.0" },
     { name = "paramiko", specifier = "==3.5.1" },
     { name = "sshtunnel", specifier = ">=0.4.0" },
+    { name = "wtforms", specifier = ">=3.2.1" },
+    { name = "wtforms-validators", specifier = ">=1.0.0" },
 ]
 
 [[package]]
@@ -361,12 +367,35 @@ wheels = [
 ]
 
 [[package]]
+name = "flask-wtf"
+version = "1.2.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "flask" },
+    { name = "itsdangerous" },
+    { name = "wtforms" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/80/9b/f1cd6e41bbf874f3436368f2c7ee3216c1e82d666ff90d1d800e20eb1317/flask_wtf-1.2.2.tar.gz", hash = "sha256:79d2ee1e436cf570bccb7d916533fa18757a2f18c290accffab1b9a0b684666b", size = 42641, upload-time = "2024-10-24T07:18:58.555Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dc/19/354449145fbebb65e7c621235b6ad69bebcfaec2142481f044d0ddc5b5c5/flask_wtf-1.2.2-py3-none-any.whl", hash = "sha256:e93160c5c5b6b571cf99300b6e01b72f9a101027cab1579901f8b10c5daf0b70", size = 12779, upload-time = "2024-10-24T07:18:56.976Z" },
+]
+
+[[package]]
 name = "idna"
 version = "3.11"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz", hash = "sha256:795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902", size = 194582, upload-time = "2025-10-12T14:55:20.501Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl", hash = "sha256:771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea", size = 71008, upload-time = "2025-10-12T14:55:18.883Z" },
+]
+
+[[package]]
+name = "is-disposable-email"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/16/11/5a90ff5f7b9719cf9f3869373c447bbf14236aeb2799323c057d8c6688eb/is_disposable_email-1.0.0.tar.gz", hash = "sha256:d31f0200aea99f5f74bf6a6092fc6a65d232d7932a80152a6437e5b8c7884b06", size = 103559, upload-time = "2019-06-25T03:15:21.29Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fa/37/a9e1a5b5820fe5447e2c971768991c99ec4ff0e90bb4d10bad40421910d9/is_disposable_email-1.0.0-py3-none-any.whl", hash = "sha256:905c84806d8d89c87d77925807a4a2830da6964f89b879a3a9247c314f18e777", size = 104404, upload-time = "2019-06-25T03:15:19.971Z" },
 ]
 
 [[package]]
@@ -573,4 +602,30 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz", hash = "sha256:210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25", size = 864736, upload-time = "2026-02-19T15:17:18.884Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4d/ec/d58832f89ede95652fd01f4f24236af7d32b70cab2196dfcc2d2fd13c5c2/werkzeug-3.1.6-py3-none-any.whl", hash = "sha256:7ddf3357bb9564e407607f988f683d72038551200c704012bb9a4c523d42f131", size = 225166, upload-time = "2026-02-19T15:17:17.475Z" },
+]
+
+[[package]]
+name = "wtforms"
+version = "3.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "markupsafe" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/01/e4/633d080897e769ed5712dcfad626e55dbd6cf45db0ff4d9884315c6a82da/wtforms-3.2.1.tar.gz", hash = "sha256:df3e6b70f3192e92623128123ec8dca3067df9cfadd43d59681e210cfb8d4682", size = 137801, upload-time = "2024-10-21T11:34:00.108Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/08/c9/2088fb5645cd289c99ebe0d4cdcc723922a1d8e1beaefb0f6f76dff9b21c/wtforms-3.2.1-py3-none-any.whl", hash = "sha256:583bad77ba1dd7286463f21e11aa3043ca4869d03575921d1a1698d0715e0fd4", size = 152454, upload-time = "2024-10-21T11:33:58.44Z" },
+]
+
+[[package]]
+name = "wtforms-validators"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dnspython" },
+    { name = "is-disposable-email" },
+    { name = "wtforms" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c4/b7/83c8a2a1dfa7381bc17219f41ef4e6888f44b2d1f42807df45b269a038d8/wtforms-validators-1.0.0.tar.gz", hash = "sha256:6bafc63fb4a000d097da010d8e89dddffe93e894f2ff91069117f774b93e1f7c", size = 3544, upload-time = "2019-06-29T21:46:09.661Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ca/a8/347ab9f43023faf275857469424425637c297746ad0cbe3d50379d6c6543/wtforms_validators-1.0.0-py3-none-any.whl", hash = "sha256:b61e2da9b3cb8ce77e59550168eb9c445b13f4ad3b262c26b0bb2801aed2462e", size = 4729, upload-time = "2019-06-29T21:46:07.31Z" },
 ]
