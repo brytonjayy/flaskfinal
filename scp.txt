@@ -1,0 +1,2 @@
+ scp -i  "C:\Users\Bryton\.ssh\bry121518.pem" -p 787 bry121518@nbtl.mesacc.edu:"C:\TMP\goodreadscleaned.csv"
+
