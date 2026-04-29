@@ -18,7 +18,7 @@ def bytitle():
 @app.route('/titles', methods=['POST'])
 def list_of_titles():
     with open("stuff.inc") as pwfile:
-        mydata = pwfile.readline() 
+        mydata = pwfile.readline()
         mydata = mydata.rstrip('\n')
         dblist = mydata.split(" ")
         dbtuple = tuple(dblist)
@@ -26,9 +26,14 @@ def list_of_titles():
 
     searchby = request.form['book_title']
     # searchby = request.args['book_title']
-    books = getbooks(searchby, dbuser, dbpasswd, dbname)
+    books = getbooks(searchby,dbuser,dbpasswd,dbname)
 
     return books
+
+# @app.route('/login', methods=['GET','POST'])
+# def logthemin():
+#     form = LoginUsers()
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

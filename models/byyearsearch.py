@@ -10,7 +10,7 @@ from sshtunnel import SSHTunnelForwarder
 with open("stuff.inc") as pwfile:
     mydata = pwfile.readline()
     mydata = mydata.rstrip('\n')
-    dblist = mydata.split(" ")
+    dblist = mydata.split(" ")  
     dbtuple = tuple(dblist)
     dbuser = dbtuple[1]
     dbpasswd, dbuser, dbname = dbtuple
