@@ -10,6 +10,10 @@ wheels/
 stuff.inc
 bry121518.pem
 
-
-# Virtual environments
-.venv
+.venv/
+.idea
+*.pem
+*.ppk
+tests/
+__pycache__/
+stuff.inc

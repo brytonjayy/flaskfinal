@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="POST" action="/login">
+         {{ form.csrf_token }}
+         {% if form.csrf_token.errors %}
+            <div class="warning">You have submitted an invalid SRF token</div>
+        {% endif %}
+
+        {{form.user_email.label}}
+
+        {% if form.errors %}
+            <p> {{form.errors.items()}} </p>
+        {% endif %}
+
+        {{form.submit()}}
+
+    </form>
+
 </body>
 </html>
