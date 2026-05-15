@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Forgot to specify a title</title>
+    {% endif %}
+</head>
+<body>
+<h1>{{title}}</h1>
+<table>
+<tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>ISBN</th>
+    <th>ISBN13</th>
+    <th>Publisher</th>
+</tr>
+
+
+        <tr>
+            <td><a href="/bookinfo/{{data[0]['book_id]}}">{{data[0]['title']}}</a></td>
+            <td>{{data[0].pubyear}}</td>
+            <td>{{data[0].isbn}}</td>
+            <td>{{data[0]['isbn13']}}</td>
+            <td>{{data[0]['pubname']}}</td>
+        </tr>
+
+        <ul>
+            {% for each item in data[1] %}
+            <li>
+                {{item['firstname']}} {{item['lastname']}}
+            </li>
+            {% endfor %}
+        </ul>
+
+    </table>
+    
+</body>
+</html>

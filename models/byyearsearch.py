@@ -1,12 +1,5 @@
 import mysql.connector
 from sshtunnel import SSHTunnelForwarder
-# Example based on https://dev.mysql.com/doc/connector-python/en/connector-python-tutorial-cursorbuffered.html
-# http://www.mysqltutorial.org/getting-started-mysql-python-connector/
-# https://medium.com/@amirziai/query-your-database-over-an-ssh-tunnel-with-pandas-603ce49b35a1
-
-# stuff.inc should have a single line, with three items, with a  single space between them
-# mysqlpassword username databasename
-# obviously put the ACTUAL password, username and dbname in stuff.inc
 with open("stuff.inc") as pwfile:
     mydata = pwfile.readline()
     mydata = mydata.rstrip('\n')
@@ -16,8 +9,8 @@ with open("stuff.inc") as pwfile:
     dbpasswd, dbuser, dbname = dbtuple
 #print dblist
 
-def getbooks(searchby, dbuser, dbpasswd, dbname):
-    with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="bry121518.pem", ssh_username=dbuser,
+def getbooksbyyear(searchby, dbuser, dbpasswd, dbname):
+    with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="../bry121518.pem", ssh_username=dbuser,
                             remote_bind_address=("localhost", 3306)) as server):
 
         with mysql.connector.connect(user=dbuser, database=dbname, password=dbpasswd,
