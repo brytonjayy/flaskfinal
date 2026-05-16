@@ -7,14 +7,13 @@
     <title>Titles</title>
 </head>
 <body>
-        <div class="BBbody">
-            <h1>Books Found</h1>
+    <form action="/byyear" method="POST">
             <ul>
                 {% for book in books %}
                     <li>{{ book.title }} by {{ book.author }}</li>
                 {% endfor %}
             </ul>
-        </div>
+        </form>
     
 </body>
 </html>

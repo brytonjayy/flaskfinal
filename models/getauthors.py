@@ -2,8 +2,6 @@ import mysql.connector
 from sshtunnel import SSHTunnelForwarder
 
 def getauthors(searchterm, dbuser, dbpasswd, dbname):
-    # searchterm should be a dictionary with the keys
-    # fname, lname, email, hashpw, status, vcode, vstatus, q1, a1, q2, a2
     with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="bry121518.pem", ssh_username=dbuser,
                             remote_bind_address=("localhost", 3306)) as server):
 

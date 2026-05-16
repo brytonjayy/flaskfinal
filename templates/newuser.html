@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">2
+    <title>Title</title>
+</head>
+<body>
+
+    <form method="POST" action='/showform'>
+{{ form.csrf_token }}
+{% if form.csrf_token.errors %}
+    <div class="warning">You have submitted an invalid CSRF token</div>
+{% endif %}
+<br>
+{{form.user_name.label}} {{form.user_name(size=30)}} <br>
+{{form.user_pass.label}} {{form.user_pass(size=20)}} <br>
+{{form.confirm_pass.label}}{{form.confirm_pass}}<br>
+{{form.user_email.label}} {{form.user_email(size=50)}}<br>
+{{form.year_born.label}}{{form.year_born}}<br>
+
+<ul>
+    {% for subfield in form.user_type %}
+    <li>
+        {{ subfield }}
+        {{ subfield.label }}
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+{{form.pet_choice.label}}{{form.pet_choice}}
+<br>
+    {% if form.errors %}
+        <p> {{form.errors.items()}}</p>
+    {% endif %}
+
+{{ form.submit() }}
+</form>
+
+</body>
+</html>

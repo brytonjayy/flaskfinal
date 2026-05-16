@@ -7,14 +7,14 @@
     <title>Titles</title>
 </head>
 <body>
-        <div class="BBbody">
-            <h1>Books Found</h1>
-            <ul>
-                {% for book in books %}
-                    <li>{{ book.title }} by {{ book.author }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    
+        {% for item in data %}
+        <tr>
+            <td><a href="/bookinfo/{{item['book_id']}}">{{item['title']}}</a></td>
+            <td>{{item.pubyear}}</td>
+            <td>{{item.isbn}}</td>
+            <td>{{item.['isbn13']}}</td>
+            <td>{{item.['pubname']}}</td>
+        </tr>
+        {% endfor %}
 </body>
 </html>

@@ -2,7 +2,8 @@ import mysql.connector
 from sshtunnel import SSHTunnelForwarder
 import os
 
-def getbooks(searchterm, dbuser, dbpasswd, dbname):
+def getbooks(searchby, dbuser, dbpasswd, dbname):
+    # ssh_key = os.getenv('MY_SSH_KEY')
     with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="bry121518.pem", ssh_username=dbuser,
                             remote_bind_address=("localhost", 3306)) as server):
 
@@ -10,7 +11,7 @@ def getbooks(searchterm, dbuser, dbpasswd, dbname):
                                       host="localhost", port=server.local_bind_port) as db1:
 
             cursor1 = db1.cursor(buffered=True)
-            cursor1.callproc('getbooksbytitle', (searchterm,))
+            cursor1.callproc('getbooksbytitle', (searchby,))
             for result in cursor1.stored_results():
 
                 booklist = []

@@ -7,10 +7,9 @@ with open("stuff.inc") as pwfile:
     dbtuple = tuple(dblist)
     dbuser = dbtuple[1]
     dbpasswd, dbuser, dbname = dbtuple
-#print dblist
 
 def getbooksbyyear(searchby, dbuser, dbpasswd, dbname):
-    with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="../bry121518.pem", ssh_username=dbuser,
+    with (SSHTunnelForwarder(("nbtl.mesacc.edu", 787), ssh_pkey="bry121518.pem", ssh_username=dbuser,
                             remote_bind_address=("localhost", 3306)) as server):
 
         with mysql.connector.connect(user=dbuser, database=dbname, password=dbpasswd,

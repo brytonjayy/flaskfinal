@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, RadioField, SelectField
-from wtforms.validators import DataRequired, Email, Length, NumberRange, Regexp, URL, InputRequired
+from wtforms import StringField, PasswordField, RadioField, SelectField, SubmitField
+from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange, Regexp, URL, InputRequired
 from models.getauthors import getauthors
 
 class AskForTitle(FlaskForm):
@@ -22,12 +22,13 @@ class GetAuthors(FlaskForm):
     author_list = getauthors('',dbuser, dbpasswd, dbname)
     author_list.insert(0,(None, "Choose an Author!"))
     choose_author = SelectField("Choose your Author", choices=author_list, validators=[DataRequired()])
-    submit = SelectField("Search by Author")
+    submit = SubmitField("Search by Author")
         
 class NewUsers (FlaskForm):
     first_name = StringField('First Name:', validators=[DataRequired()])
-    
-    
-class LoginUsers(FlaskForm):
-    pass
+    last_name =  StringField('Last Name:', validators=[DataRequired()])
+    user_email =  StringField('Email:', validators=[DataRequired(), Email("Enter a Valid Email")])
+    user_pass = PasswordField('Enter Password', validators=[DataRequired(), EqualTo('confirm_pass', message="Passwords must match")])
+    confirm_pass = PasswordField('Repeat Password', validators=[DataRequired()])
+
     

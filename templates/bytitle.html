@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">2
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-    <title>Search by Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-    <div class="BBbody">
-        <h1>Search by Title</h1>
-        <form method="post" action="/titles">
-                
-                {{form.csrf_token}}
 
-                {{form.book_title.label}}&nbsp;{{form.book_title}}&nbsp;
+        <form method="post" action="/bytitle">
 
-            <input class="searchButton" type="submit" name="bytitle" value="-> Search for Book <-">
+                <!-- {{ form.csrf_token }} -->
+
+                {{form.book_title.label}}{{form.book_title}}
+
+            <input type="submit" name="bytitle" value="-> Search for Book <-">
         </form>
-    </div>
+
 </body>
 </html>
